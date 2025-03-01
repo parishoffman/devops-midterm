@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     allowedHosts: [
       'localhost',
-      'ec2-18-232-111-74.compute-1.amazonaws.com'
+      'ec2-98-80-66-238.compute-1.amazonaws.com'
     ]
   }
 })
