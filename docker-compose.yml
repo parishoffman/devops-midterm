@@ -16,10 +16,20 @@ services:
   backend:
     build: ./api
     container_name: example-backend
+    environment:
+      - DB_USER=root
+      - DB_PASSWORD=paris
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=example
     ports:
       - "8080:8080"
+    volumes:
+      - ./api:/app
     networks:
       - my_network
+    depends_on:
+      - mysql
 
   frontend:
     build: ./view
@@ -28,6 +38,8 @@ services:
       - "5173:5173"
     networks: 
       - my_network
+    depends_on:
+      - backend
 
 volumes:
   mysql_data:
