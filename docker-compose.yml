@@ -12,6 +12,14 @@ services:
         - ./database.sql:/docker-entrypoint-initdb.d/database.sql
       networks:
         - my_network
+  
+  backend:
+    build: ./api
+    container_name: example-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - my_network
 
   frontend:
     build: ./view
