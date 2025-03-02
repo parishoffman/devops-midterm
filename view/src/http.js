@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Base URL should point to the API root, not a specific endpoint
 let http = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: '/api',
   headers: {
     'Content-type': 'application/json'
   },
