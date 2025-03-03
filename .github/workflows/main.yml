@@ -38,6 +38,6 @@ jobs:
             GITHUB_TOKEN: ${{ github.token }}
           run: >-
             gh release create
-            "$GITHUB_REF_NAME"
+            "release-${{ github.run_number }}"
             --repo "$GITHUB_REPOSITORY"
             --notes "Docker image published to ghcr.io/${{ github.repository }}:${{ github.ref_name }}"
